@@ -25,7 +25,6 @@ for file in $(ls wikipron/data/scrape/tsv/ | grep broad.tsv); do
     #echo -e "__label__"$LANG"\t$FOR" >>data/list.txt.tmp
 done
 cat data/corpus/*.train >>data/train/train.corpus
-cat data/list.txt.tmp | uniq >>data/list.txt
 rm list.txt.tmp
 
 #With dialect
