@@ -1,0 +1,6 @@
+fastText is a library for efficient learning of word representations and sentence classification.
+Judá engendró, de Tamar, a Fares y a Zara.
+Isaac engendró a Jacob.
+Jesucristo rey David castapita aywaragmi cargan.
+Livro da genealogia de Jesus Cristo, filho de Davi, filho de Abraão.
+Обязательно приеду к вам снова.
