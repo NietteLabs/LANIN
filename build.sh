@@ -15,7 +15,7 @@ mkdir data/{test,test-dialect,train,train-dialect} -p
 mkdir data/{corpus,corpus-dialect} -p
 
 #Withou dialect
-for file in $(ls wikipron/data/scrape/tsv/ | grep broad.tsv); do
+for file in $(ls wikipron/data/scrape/tsv/ | grep -v filtered); do
     echo $file
     # FOR=$(cat wikipron/data/scrape/summary.tsv | grep broad.tsv | grep $file | cut -f3 | sort -u | tr " " "-")
     LANG=$(echo $file | cut -f1 -d"_")
@@ -24,11 +24,11 @@ for file in $(ls wikipron/data/scrape/tsv/ | grep broad.tsv); do
     cp /tmp/$file.tmp data/corpus/$file.train
     #echo -e "__label__"$LANG"\t$FOR" >>data/list.txt.tmp
 done
-cat data/corpus/*.train >>data/train/train.corpus
+cat data/corpus/*.train | sort -u >>data/train/train.corpus
 rm list.txt.tmp
 
 #With dialect
-for file in $(ls wikipron/data/scrape/tsv/ | grep broad.tsv); do
+for file in $(ls wikipron/data/scrape/tsv/ | grep -v filtered); do
     echo $file
     ACC=$(echo $file | sed 's/./& /g' | tr " " "\n" | grep -w '_' -c)
     #  FOR=$(cat wikipron/data/scrape/summary.tsv | grep broad.tsv | grep $file | cut -f3 | sort -u | tr " " "-")
@@ -48,4 +48,4 @@ for file in $(ls wikipron/data/scrape/tsv/ | grep broad.tsv); do
         #   echo -e "__label__"$LANG"\t$FOR" >>data/list-dialect.txt
     fi
 done
-cat data/corpus-dialect/*.train >>data/train-dialect/train.corpus
+cat data/corpus-dialect/*.train | sort -u >>data/train-dialect/train.corpus
