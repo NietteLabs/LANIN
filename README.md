@@ -9,25 +9,25 @@ cd LANIN
 git submodule update --init --recursive
 ```
 
-# Compilar e preparar WikiPron para o treinamento
+## Compilar e preparar WikiPron para o treinamento
 
 ```bash
 bash build.sh 
 ```
 
-# Treinar modelos (Com divisão de dialetos e sem divisão de dialetos)
+## Treinar modelos (Com divisão de dialetos e sem divisão de dialetos)
 
 ```bash
 bash train.sh
 ```
 
-# Testar com frases do arquivo teste.txt, com os modelos contidos em models/
+## Testar com frases do arquivo teste.txt, com os modelos contidos em models/
 
 ```bash
 bash test.sh
 ```
 
-# Testar com modelos e texto/arquivo personalizável
+## Testar com modelos e texto/arquivo personalizável
 
 ```bash
 bash bin/lanin.sh modelo arquivo/texto
