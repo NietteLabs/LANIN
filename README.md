@@ -26,3 +26,23 @@ bash train.sh
 ```bash
 bash test.sh
 ```
+
+#Testar com modelos e texto/arquivo personalizável
+
+```bash
+bash bin/lanin.sh modelo arquivo/texto
+```
+*Exemplo usando um texto de entrada*
+```bash
+bash bin/lanin.sh models/dialect.bin "oi"
+```
+
+*Exemplo usando um texto de entrada*
+```bash
+bash bin/lanin.sh models/dialect.bin arquivo.txt
+```
+
+*Saída*
+```
+__label__idioma_em_ISO_639_3
+```
