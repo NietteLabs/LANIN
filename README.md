@@ -1,7 +1,5 @@
 # LANIN
-Classificado de idiomas usado FastText e WikiPron
-
-.
+Classificador de idiomas usado FastText e WikiPron.
 
 ## Instalação
 
